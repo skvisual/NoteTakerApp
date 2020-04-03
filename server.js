@@ -50,7 +50,7 @@ app.post('/api/notes', function(req, res) {
 
   notesDB.push(req.body);
 
-  fs.writeFile('/db/db.json', JSON.stringify(notesDB) + '\n', (err) => {
+  fs.writeFile('db/db.json', JSON.stringify(notesDB) + '\n', (err) => {
     if (err){
       console.log('ERROR: Could not add note to database!')
     }
