@@ -5,7 +5,7 @@ var path = require('path');
 var express = require('express');
 var notesDB = require('./db/db.json');
 
-var data = fs.readFileSync('db/db.json', "utf8");
+var data = fs.readFileSync('./db/db.json', "utf8");
 
 var notesDB = JSON.parse(data);
 
@@ -50,7 +50,7 @@ app.post('/api/notes', function(req, res) {
 
   notesDB.push(req.body);
 
-  fs.writeFile('db/db.json', JSON.stringify(notesDB) + '\n', (err) => {
+  fs.writeFile('/db/db.json', JSON.stringify(notesDB) + '\n', (err) => {
     if (err){
       console.log('ERROR: Could not add note to database!')
     }
