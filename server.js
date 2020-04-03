@@ -3,7 +3,7 @@ var http = require("http");
 var fs = require('fs');
 var path = require('path');
 var express = require('express');
-// var notesDB = require('./db/db.json');
+var notesDB = require('./db/db.json');
 
 var data = fs.readFileSync('db/db.json', "utf8");
 
